@@ -7,7 +7,7 @@ public class JavaStringLabRunner
 {
 	public static void main( String args[] )
 	{
-		BetweenSigns s = new BetweenSigns();
+		/*BetweenSigns s = new BetweenSigns();
 			
 		System.out.println(  s.go(  "dog#cat#pigaplus")    );
 		System.out.println(  s.go(  "pigs#apluscompsci#food")    );
@@ -19,7 +19,7 @@ public class JavaStringLabRunner
 		System.out.println(  s.go(  "##wowgira77##eplus")    );
 		System.out.println(  s.go(  "catsandaplusdogsaplus###")    );
 		System.out.println(  s.go(  "7")    );
-
+		*/
 	}
 }
 

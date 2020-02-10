@@ -34,22 +34,27 @@ public class WordsCompare
 	public void compare()
 	{
 		boolean check = false;
-		System.out.println("double yay");
+		int i = 0;
 		while (check == false) {
-			int i = 0;
-			if ((int) wordOne.charAt(i) > (int) wordTwo.charAt(i)) {
+			if (i > wordOne.length()-1){
 				compare = -1;
-				System.out.println("yay");
 				check = true;
+				break;
 			}
-			if ((int) wordTwo.charAt(i) < (int) wordTwo.charAt(i)) {
+			if (i > wordTwo.length()-1) {
 				compare = 1;
-				System.out.println("nay");
+				check = true;
+				break;
+			}
+			if (wordOne.charAt(i) > wordTwo.charAt(i)) {
+				compare = 1;
+				check = true;;
+			}
+			if ( wordOne.charAt(i) <  wordTwo.charAt(i)) {
+				compare = -1;
 				check = true;
 			}
-			else {
 			i++;
-			}
 		}
 	}
 
@@ -61,7 +66,7 @@ public class WordsCompare
 		}
 		else
 		{
-			return wordOne + " should be placed after " + wordTwo + "\n";
+			return wordTwo + " should be placed before " + wordOne + "\n";
 		}
 	}
 }

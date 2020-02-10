@@ -14,8 +14,11 @@ public class WordsCompareRunner
    {
 		//add test cases
 	   WordsCompare word = new WordsCompare();
-	   word.setWords("hi", "ho");
+	   word.setWords("bat", "ba");
 	   word.compare();
-	   out.println(word.toString());
+	   System.out.println(word.toString());
+	   WordsCompare word1 = new WordsCompare("yeti", "yacht");
+	   word1.compare();
+	   System.out.println(word1.toString());
 	}
 }

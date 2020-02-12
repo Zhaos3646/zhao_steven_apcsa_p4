@@ -34,7 +34,7 @@ public class Variables
 		String stringOne = "Hello";
 
 		//output your information here
-		System.out.println("/////////////////////////////////");
+		System.out.println(4.0/3);
 		System.out.println("*                               *");
 		System.out.println("*        integer types          *");
 		System.out.println("*                               *");

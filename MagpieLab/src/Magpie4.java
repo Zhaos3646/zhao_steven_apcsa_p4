@@ -53,6 +53,28 @@ public class Magpie4
 		{
 			response = transformIWantToStatement(statement);
 		}
+		else if (findKeyword(statement, "I want", 0) >= 0) {
+			response = transformIWantStatement(statement);
+		}
+		else if (findKeyword(statement, "dog") >= 0 || findKeyword(statement, "cat") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "mauro") >= 0) {
+			response = "Mauro is such a good teacher";
+		}
+		else if (findKeyword(statement, "grandmother") >= 0 || findKeyword(statement, "grandfather") >= 0) {
+			response = "Tell me more about your grandparents";
+		}
+		else if (findKeyword(statement, "sports") >= 0 || findKeyword(statement, "athletics") >= 0) {
+			response = "Do you like sports?";
+		}
+		else if (findKeyword(statement, "food") >= 0 || findKeyword(statement, "eat") >= 0) {
+			response = "What is your favorite food?";
+		}
+		else if (findKeyword(statement, "no") >= 0)
+		{
+		response = "Why so negative?";
+		}
 
 		else
 		{
@@ -64,6 +86,13 @@ public class Magpie4
 					&& findKeyword(statement, "me", psn) >= 0)
 			{
 				response = transformYouMeStatement(statement);
+			}
+			int psn2 = findKeyword(statement, "I", 0);
+
+			if (psn2 >= 0
+					&& findKeyword(statement, "you", psn2) >= 0)
+			{
+				response = transformMeYouStatement(statement);
 			}
 			else
 			{
@@ -94,6 +123,19 @@ public class Magpie4
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "What would it mean to " + restOfStatement + "?";
 	}
+	private String transformIWantStatement(String statement) {
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psn = findKeyword (statement, "I want", 0);
+		String restOfStatement = statement.substring(psn + 7).trim();
+		return "Would you be happy if you had " + restOfStatement + "?";
+	}
 
 	
 	
@@ -120,6 +162,22 @@ public class Magpie4
 		
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
+	}
+	private String transformMeYouStatement(String statement) {
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		
+		int psnOfI = findKeyword (statement, "I", 0);
+		int psnOfYou = findKeyword (statement, "you", psnOfI + 3);
+		
+		String restOfStatement = statement.substring(psnOfI + 2, psnOfYou).trim();
+		return "Why do you " + restOfStatement + " me?";
 	}
 	
 	

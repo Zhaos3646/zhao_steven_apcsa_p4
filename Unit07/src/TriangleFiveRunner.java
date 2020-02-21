@@ -10,5 +10,9 @@ public class TriangleFiveRunner
    {
 	   TriangleFive test = new TriangleFive('a', 4);
 	   System.out.println(test.toString());
+	   test.setAmount(10);
+	   System.out.println(test);
+	   test.setLetter('c');
+	   System.out.println(test);
 	}
 }

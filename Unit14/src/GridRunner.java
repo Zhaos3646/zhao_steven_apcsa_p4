@@ -14,5 +14,6 @@ public class GridRunner
 		String[] vals = {"a", "b", "c", "d", "e"}; 
 		Grid grid1 = new Grid(10, 10, vals);
 		System.out.print(grid1.toString());
+		System.out.println(grid1.findMax(vals));
 	}
 }

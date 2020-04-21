@@ -15,7 +15,14 @@ public class MatrixCount1
 
     public static int count( int val  )
     {
-		//add code
-		return 0;
+    	int count = 0;
+		for (int i = 0; i < 5; i ++) {
+			for (int j = 0; j < 5; j ++) {
+				if (m[i][j] == val) {
+					count ++;
+				}
+			}
+		}
+		return count;
     }
 }

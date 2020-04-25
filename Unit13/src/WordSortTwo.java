@@ -36,13 +36,17 @@ public class WordSortTwo
 
 			{
 
-			if( array[j].charAt(0) < array[j].charAt(0))
+			if( array[j].charAt(0) < array[min].charAt(0))
 
 			min = j;
-			//find location of smallest
 
+			
+			else if (array[j].charAt(0) == array[min].charAt(0)) {
+				if (array[j].charAt(1) < array[min].charAt(1)) {
+					min = j;
+				}
 			}
-
+			}
 			if(min != i) {
 
 			String temp = array[min];

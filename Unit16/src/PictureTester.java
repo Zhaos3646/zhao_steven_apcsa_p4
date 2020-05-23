@@ -11,42 +11,104 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
   }
-  
+  public static void testKeepOnlyBlue() {
+	  Picture beach = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\beach.jpg");
+	  beach.explore();
+	  beach.keepOnlyBlue();
+	  beach.explore();
+  }
+  public static void testNegate() {
+	  Picture beach = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\beach.jpg");
+	  beach.explore();
+	  beach.negate();
+	  beach.explore();
+  }
+  public static void testGrayscale() {
+	  Picture beach = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\beach.jpg");
+	  beach.explore();
+	  beach.greyscale();
+	  beach.explore();
+  }
+  public static void testFixUnderwater() {
+	  Picture water = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\water.jpg");
+	  water.explore();
+	  water.fixUnderwater();
+	  water.explore();
+  }
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\caterpiller.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
+  public static void testMirrorVerticalRightToLeft()
+  {
+    Picture caterpillar = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRightToLeft();
+    caterpillar.explore();
+  }
   
+  public static void testMirrorHorizontal()
+  {
+    Picture caterpillar = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontal();
+    caterpillar.explore();
+  }
+  public static void testMirrorHorizontalBotToTop() {
+	  Picture caterpillar = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\caterpillar.jpg");
+	    caterpillar.explore();
+	    caterpillar.mirrorHorizontalBotToTop();
+	    caterpillar.explore();
+  }
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
   }
-  
+  public static void testMirrorArms() {
+	  Picture snowman = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\snowman.jpg");
+	  snowman.explore();
+	  snowman.mirrorSnowman();
+	  snowman.explore();
+  }
+  public static void testMirrorGull() {
+	  Picture gull = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\seagull.jpg");
+	  gull.explore();
+	  gull.mirrorGull();
+	  gull.explore();
+  }
+  public static void testCopy() {
+	  Picture gull = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\seagull.jpg");
+	  Picture canvas = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\640x480.jpg");
+	  gull.explore();
+	  canvas.copy(gull, 0, 0, 200, 0, 0, 100);
+	  canvas.write("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\collage.jpg");
+	  canvas.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
+    Picture canvas = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\640x480.jpg");
+    canvas.myCollage();
     canvas.explore();
   }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("C:\\Users\\Flame\\OneDrive\\Documents\\GitHub\\zhao_steven_apcsa_p4\\Unit16\\src\\images\\swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -58,7 +120,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -66,13 +128,15 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
+	//testMirrorVerticalRightToLeft();
+	//testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

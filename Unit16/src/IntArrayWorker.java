@@ -15,6 +15,35 @@ public class IntArrayWorker
    * Method to return the total 
    * @return the total of the values in the array
    */
+  public int getCount(int num) {
+	  int count = 0;
+	  for (int i = 0; i < matrix.length; i ++) {
+		  for (int j = 0; j < matrix[i].length; j++) {
+			  if (matrix[i][j] == num) {
+				  count ++;
+			  }
+		  }
+	  }
+	  return count;
+  }
+  public int getLargest() {
+	  int max = matrix[0][0];
+	  for (int i = 0; i < matrix.length; i ++) {
+		  for (int j = 0; j < matrix[i].length; j ++) {
+			  if (matrix[i][j] > max) {
+				  max = matrix[i][j];
+			  }
+		  }
+	  }
+	  return max;
+  }
+  public int getColTotal(int col) {
+	  int total = 0;
+	  for (int i = 0; i < matrix.length; i ++) {
+		  total += matrix[i][col];
+	  }
+	  return total;
+  }
   public int getTotal()
   {
     int total = 0;
